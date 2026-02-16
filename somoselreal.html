@@ -5,82 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EL REAL - Democracia Real</title>
 <style>
-/* Estilos generales */
+/* --- Estilos generales --- */
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.8;
+  line-height: 1.6;
   margin: 0;
   background-color: #FFD700; /* amarillo */
   color: #000;
   scroll-behavior: smooth; /* scroll suave */
 }
 
-/* Contenedor principal de secciones */
+/* Secciones */
 .section {
-  min-height: 100vh; /* cada sección ocupa toda la pantalla */
+  min-height: auto; /* no obligar a ocupar toda la pantalla */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 30px 20px; /* menos padding vertical */
   box-sizing: border-box;
 }
 
-/* Contenedor para columnas */
+/* Contenedor de columnas */
 .contenedor {
   display: flex;
-  flex-wrap: wrap; /* para móviles se acomoda */
-  gap: 20px;
+  flex-wrap: wrap; /* columnas apilables en móvil */
+  gap: 15px; /* menos espacio entre columnas */
 }
 
 /* Cada columna */
 .columna {
   flex: 1;
   background-color: rgba(255, 255, 255, 0.85);
-  padding: 25px;
+  padding: 20px;
   border-radius: 8px;
-  min-width: 280px; /* evita que sean demasiado estrechas en móviles */
+  min-width: 280px; /* evita columnas demasiado estrechas */
 }
 
-/* Encabezados centrados */
+/* Encabezados */
 h1, h2 {
   text-align: center;
-  margin: 20px 0;
+  margin: 15px 0; /* menos espacio entre encabezados */
 }
 
-/* Párrafos y listas */
+/* Párrafos */
 p {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
+/* Listas */
 ul, ol {
   margin-left: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
-
 ul li, ol li {
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 }
 
-/* Navegación one-page opcional */
-nav {
-  display: none; /* ocultamos navegación flotante para evitar que tape contenido */
-}
-
-/* --- MEDIA QUERY PARA MÓVIL --- */
+/* --- Media query para móviles --- */
 @media (max-width: 768px) {
   .contenedor {
     flex-direction: column; /* columnas apiladas */
   }
   .columna {
-    min-width: 100%; /* ocupan todo el ancho */
+    min-width: 100%;
   }
 }
 
-/* --- OCULTAR BOTONES FLOTANTES QUE TAPAN TEXTO --- */
+/* --- Ocultar botones flotantes que tapan texto --- */
 @media (max-width: 768px) {
-  .toc, .floating-toc, .anchor-link, .anchor, nav {
+  .toc, .floating-toc, .anchor-link, .anchor, .header-anchor, nav {
     display: none !important;
   }
+}
+
+/* --- Ocultar botones flotantes automáticos globales --- */
+.anchor, .header-anchor, .anchor-link, .toc, .floating-toc {
+  display: none !important;
 }
 </style>
 </head>
