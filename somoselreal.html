@@ -15,59 +15,14 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Contenedor principal */
-.section {
-  min-height: auto; /* no obligar a ocupar toda la pantalla */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 30px 20px; /* menos espacio entre secciones */
-  box-sizing: border-box;
-}
-
-/* Contenedor de columnas */
-.contenedor {
-  display: flex;
-  flex-wrap: wrap; /* columnas apilables en móvil */
-  gap: 15px; /* menos espacio entre columnas */
-}
-
-/* Cada columna */
-.columna {
-  flex: 1;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 20px;
-  border-radius: 8px;
-  min-width: 280px; /* evita columnas demasiado estrechas */
-}
-
-/* Encabezados */
-h1, h2 {
-  text-align: center;
-  margin: 15px 0;
-}
-
-/* Párrafos */
-p {
-  margin-bottom: 15px;
-}
-
-/* Listas */
-ul, ol {
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
-ul li, ol li {
-  margin-bottom: 7px;
-}
-
-/* --- QR y botones arriba --- */
+/* Cabecera con QR y botones */
 .header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #FFD700;
 }
 
 .qr-container {
@@ -90,6 +45,7 @@ ul li, ol li {
 
 .accion:hover {
   background-color: #00bfa5;
+  color: #fff;
 }
 
 .qr-container img {
@@ -99,30 +55,71 @@ ul li, ol li {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
+/* Secciones */
+.section {
+  padding: 30px 20px; /* menos espacio entre secciones */
+  box-sizing: border-box;
+}
+
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* espacio entre columnas */
+}
+
+.columna {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 280px;
+}
+
+h1, h2 {
+  text-align: center;
+  margin: 15px 0;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+ul li, ol li {
+  margin-bottom: 7px;
+}
+
 /* --- Media query móvil --- */
 @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .qr-container {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  .qr-container img {
+    width: 70px;
+    height: 70px;
+  }
   .contenedor {
     flex-direction: column;
   }
   .columna {
     min-width: 100%;
   }
-  .header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .qr-container img {
-    width: 70px;
-    height: 70px;
-  }
 }
 
-/* --- Ocultar botones flotantes GitHub Pages --- */
+/* --- Ocultar botones flotantes automáticos de GitHub Pages/Jekyll --- */
 .anchor, .header-anchor, .anchor-link, .toc, .floating-toc, nav {
   display: none !important;
 }
-
 </style>
 </head>
 <body>
