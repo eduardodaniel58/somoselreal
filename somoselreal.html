@@ -4,174 +4,193 @@
 <meta charset="UTF-8">
 <title>EL REAL - Democracia Real</title>
 <style>
-/* Estilos generales */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.8;
+html, body {
   margin: 0;
-  background-color: #FFD700; /* amarillo */
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #FFD700;
   color: #000;
-  scroll-behavior: smooth; /* scroll suave para navegación */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Contenedor principal */
+.container {
+  width: 95%;
+  max-width: 1200px;
+  height: 95%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Cabecera con QR y botones */
+.header {
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* QR + texto a la izquierda */
+.qr-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Texto AFILIATE / APUNTATE */
+.accion {
+  background-color: #40E0D0;
+  color: #FFD700;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  margin-right: 10px; /* espacio entre texto y QR */
+}
+
+.accion:hover {
+  background-color: #00bfa5;
+}
+
+.qr-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Tarjetas/secciones */
 .section {
-  min-height: 100vh; /* cada sección ocupa toda la pantalla */
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 40px 20px;
-  box-sizing: border-box;
 }
 
-/* Dos columnas en las secciones que las usan */
-.contenedor {
-  display: flex;
-  flex-wrap: wrap; /* para móviles se acomoda */
-  gap: 20px;
-}
-
-/* Cada columna */
-.columna {
-  flex: 1;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 25px;
-  border-radius: 8px;
-  min-width: 280px; /* evita que sean demasiado estrechas en móviles */
-}
-
-/* Encabezados centrados */
-h1, h2 {
+h1 {
+  grid-column: 1 / 3;
   text-align: center;
-  margin: 20px 0;
+  margin: 0;
+  font-size: 1.5em;
 }
 
-/* Párrafos con margen */
+h2 {
+  text-align: center;
+  margin: 5px 0;
+  font-size: 1em;
+}
+
 p {
-  margin-bottom: 20px;
+  margin: 4px 0;
+  font-size: 0.85em;
+  line-height: 1.2em;
 }
 
-/* Listas con separación */
-ul, ol {
-  margin-left: 20px;
-  margin-bottom: 20px;
+ul {
+  padding-left: 20px;
+  margin: 4px 0;
 }
 
-ul li, ol li {
-  margin-bottom: 10px;
-}
+li { margin-bottom: 3px; }
 
-/* Botones de navegación (opcional) */
-nav {
-  position: fixed;
-  top: 10px;
-  right: 20px;
-  z-index: 100;
+.column + .column {
+  border-left: 2px solid #40E0D0;
+  padding-left: 15px;
 }
-
-nav a {
-  display: block;
-  margin-bottom: 10px;
-  text-decoration: none;
-  background-color: #40E0D0; /* azul turquesa */
-  color: #000;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  background-color: #00b2a9;
-  color: #fff;
-}
-
 </style>
 </head>
 <body>
 
-<!-- Navegación onepage -->
-<nav>
-  <a href="#intro">Introducción</a>
-  <a href="#problema">Problema</a>
-  <a href="#solucion">Cómo funciona</a>
-  <a href="#propuestas">Propuestas</a>
-  <a href="#final">EL REAL</a>
-</nav>
+<div class="container">
 
-<!-- Sección 1: Introducción -->
-<section id="intro" class="section">
-  <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
-  <p>
-    La democracia no es que una vez cada cuatro años se vote a un partido diferente y que ese gobierno haga lo que quiera sin contar con la opinión de los ciudadanos. 
-    La democracia real (demo:pueblo) (cracia:sistema de poder) significa que el poder lo tenemos los ciudadanos. 
-    La democracia real es que los ciudadanos votemos las decisiones importantes.
-  </p>
-</section>
-
-<!-- Sección 2: Problema -->
-<section id="problema" class="section">
-  <div class="contenedor">
-    <div class="columna">
-      <h2>¿Por qué es obsoleta la “democracia” anterior?</h2>
-      <p>(Se podría llamar diferente porque no se ha implementado anteriormente una democracia realmente)</p>
-      <ul>
-        <li>Alternancia de partidos sin participación directa real</li>
-        <li>Falta de transparencia y control ciudadano</li>
-        <li>Dependencia de fondos públicos y lobbies para campañas</li>
-        <li>Políticas que no priorizan al ciudadano</li>
-        <li>Servicios básicos no garantizados, altos impuestos y burocracia excesiva</li>
-      </ul>
+  <!-- Cabecera con QR y texto a la izquierda -->
+  <div class="header">
+    <!-- Izquierda -->
+    <div class="qr-container">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank" class="accion">AFILIATE</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank">
+        <img src="https://api.qrserver.com/v1/create-qr-code/? 
+size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" alt="QR EL REAL">
+      </a>
     </div>
 
-    <div class="columna">
-      <h2>Cómo funciona con EL REAL: democracia directa real</h2>
-      <ul>
-        <li>Cada decisión relevante requiere votación ciudadana</li>
-        <li>Se utilizan plataforma digital + buzones físicos para proporcionar accesibilidad a todos</li>
-        <li>Votación mensual de 1 minuto, con varias preguntas tipo sí/no</li>
-        <li>Decisiones importantes y grandes presupuestos necesitan aprobación directa de ciudadanos</li>
-      </ul>
+    <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
+
+    <!-- Derecha -->
+    <div class="qr-container">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank"  
+class="accion">CANDIDATURA</a>
+      <a href="https://api.qrserver.com/v1/create-qr-code/? 
+size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank">
+        <img src="https://api.qrserver.com/v1/create-qr-code/? 
+size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" alt="QR EL REAL">
+      </a>
     </div>
   </div>
-</section>
 
-<!-- Sección 3: Propuestas -->
-<section id="propuestas" class="section">
-  <div class="contenedor">
-    <div class="columna">
-      <p>
-        Este sistema permite que se tomen decisiones con el objetivo de mejorar la sociedad en la dirección del bien para todos los españoles, como por ejemplo:
-      </p>
-      <ul>
-        <li>Aumento de ayudas a agricultura ganadería y pesca (comemos gracias a ellos, son muy importantes)</li>
-        <li>Agua gratuita para los hogares españoles (es algo básico para la supervivencia, por ello debe ser accesible por todos)</li>
-        <li>Electricidad gratuita en los meses de invierno para los hogares españoles (la calefacción en invierno es esencial, no un privilegio)</li>
-        <li>Aumento de ayudas a padres y madres de entre 18 a 38 años (quien quiera crear familia debe hacerlo)</li>
-        <li>Educación pública gratuita y de mayor calidad (- alumnos por aula, + conocimientos para la vida real)</li>
-        <li>Reducción y eliminación progresiva de impuestos, tasas y trámites (simplificando y facilitando el desarrollo particular y empresarial)</li>
-        <li>Garantizar el cumplimiento de la ley en materia de ocupación y entrada de personas, protegiendo la seguridad ciudadana</li>
-        <li>Venta del Falcon (un presidente debe quedarse en el país que gobierna, para salir al exterior ya existe el Ministerio de Exteriores)</li>
-      </ul>
-    </div>
+  <!-- Columna izquierda -->
+  <div class="section column">
+    <p>
+      La democracia no es que una vez cada cuatro anos se vote a un partido diferente y que ese gobierno haga lo que quiera sin contar con la opinion de los ciudadanos. La democracia real  
+(demo: pueblo) (cracia: sistema de poder) significa que el poder lo tenemos los ciudadanos. La democracia real es que los ciudadanos votemos las decisiones importantes.
+    </p>
 
-    <div class="columna">
-      <p>
-        Todo esto es posible reorganizando el presupuesto del estado hacia el bien común. Ya hay dinero suficiente; con EL REAL también gestión eficiente.
-        Somos capaces de hacer posible todo lo que nos proponemos. Es la oportunidad de mejorar en todo.
-      </p>
-    </div>
+    <h2>Por que es obsoleta la "democracia" anterior?</h2>
+    <ul>
+      <li>Alternancia de partidos sin participacion directa real</li>
+      <li>Falta de transparencia y control ciudadano</li>
+      <li>Dependencia de fondos publicos y lobbies para campanas</li>
+      <li>Politicas que no priorizan al ciudadano</li>
+      <li>Servicios basicos no garantizados, altos impuestos y burocracia excesiva</li>
+    </ul>
+
+    <h2>Como funciona con EL REAL</h2>
+    <ul>
+      <li>Cada decision relevante requiere votacion ciudadana</li>
+      <li>Se utilizan plataforma digital + buzones fisicos para accesibilidad</li>
+      <li>Votacion mensual de 1 minuto, preguntas tipo si/no</li>
+      <li>Decisiones importantes y grandes presupuestos necesitan aprobacion directa</li>
+    </ul>
   </div>
-</section>
 
-<!-- Sección 4: Final -->
-<section id="final" class="section">
-  <h2>EL REAL propone. LOS CIUDADANOS disponen.</h2>
-  <h2>TODOS SOMOS EL REAL</h2>
-  <p>
-    Somos el primer y único representante de los ciudadanos. Confía en nosotros, hagamos juntos un país mejor.
-  </p>
-</section>
+  <!-- Columna derecha -->
+  <div class="section column">
+    <p>
+      Este sistema permite que se tomen decisiones con el objetivo de mejorar la sociedad en la direccion del bien para todos:
+    </p>
+    <ul>
+      <li>Aumento de ayudas a agricultura ganaderia y pesca (comemos gracias a ellos, son muy importantes)</li>
+      <li>Agua gratuita para los hogares (es algo basico para la supervivencia, por ello debe ser accesible por todos)</li>
+      <li>Electricidad gratuita en los meses de invierno para los hogares (la calefaccion en invierno es esencial, no un privilegio)</li>
+      <li>Ayudas a padres y madres de entre 18 a 38 (quien quiera crear familia debe hacerlo)</li>
+      <li>Educacion publica gratuita y de mayor calidad (- alumnos por aula, + conocimientos para la vida real)</li>
+      <li>Reduccion y eliminacion progresiva de impuestos, tasas y tramites (simplificando y facilitando el desarrollo particular y empresarial)</li>
+      <li>Garantizar cumplimiento de la ley en ocupacion y seguridad</li>
+      <li>Venta del Falcon (un presidente debe quedarse en el pais que gobierna, para salir al exterior ya existe el Ministerio de Exteriores)</li>
+    </ul>
+
+    <p>
+      Todo esto es posible reorganizando el presupuesto del estado hacia el bien comun. Ya hay dinero suficiente; con EL REAL tambien gestion eficiente, somos capaces de hacer posible  
+todo lo que nos proponemos.
+    </p>
+
+    <h2>EL REAL propone. LOS CIUDADANOS disponen</h2>
+    <p>Somos el primer y unico representante de los ciudadanos. Confia en nosotros, hagamos juntos un pais mejor</p>
+  </div>
+
+</div>
 
 </body>
 </html>
