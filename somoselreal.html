@@ -10,7 +10,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
-  background-color: #FFD700; /* amarillo */
+  background-color: #FFD700;
   color: #000;
   scroll-behavior: smooth;
 }
@@ -57,14 +57,14 @@ body {
 
 /* Secciones */
 .section {
-  padding: 30px 20px; /* menos espacio entre secciones */
+  padding: 30px 20px;
   box-sizing: border-box;
 }
 
 .contenedor {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; /* espacio entre columnas */
+  gap: 15px;
 }
 
 .columna {
@@ -95,6 +95,7 @@ ul li, ol li {
 
 /* --- Media query móvil --- */
 @media (max-width: 768px) {
+  /* Cabecera apilada */
   .header {
     flex-direction: column;
     align-items: center;
@@ -108,6 +109,8 @@ ul li, ol li {
     width: 70px;
     height: 70px;
   }
+
+  /* Columnas apiladas en móvil */
   .contenedor {
     flex-direction: column;
   }
