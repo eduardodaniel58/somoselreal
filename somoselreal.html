@@ -173,6 +173,79 @@ nav a:hover {
     Somos el primer y único representante de los ciudadanos. Confía en nosotros, hagamos juntos un país mejor.
   </p>
 </section>
+ <style>
+    /* --------------------------
+       TODO TU CSS PRINCIPAL
+    --------------------------- */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #FFD700;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
+    .container {
+      width: 95%;
+      max-width: 1200px;
+      height: 95%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 10px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    /* ... resto de tu CSS ... */
+
+    /* --------------------------
+       MEDIA QUERY PARA MÓVIL
+    --------------------------- */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr; /* ahora solo 1 columna */
+        gap: 20px;
+      }
+
+      .column + .column {
+        border-left: none; /* quitar la línea divisoria */
+        padding-left: 0;
+      }
+
+      .header {
+        flex-direction: column; /* QR y botones uno debajo del otro */
+        align-items: center;
+        text-align: center;
+      }
+
+      .qr-container {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .qr-container img {
+        width: 70px;
+        height: 70px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1em;
+      }
+
+      p, li {
+        font-size: 0.85em;
+      }
+    }
+  </style>
 </body>
 </html>
+
