@@ -12,16 +12,16 @@ body {
   margin: 0;
   background-color: #FFD700; /* amarillo */
   color: #000;
-  scroll-behavior: smooth; /* scroll suave */
+  scroll-behavior: smooth;
 }
 
-/* Secciones */
+/* Contenedor principal */
 .section {
   min-height: auto; /* no obligar a ocupar toda la pantalla */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px 20px; /* menos padding vertical */
+  padding: 30px 20px; /* menos espacio entre secciones */
   box-sizing: border-box;
 }
 
@@ -44,7 +44,7 @@ body {
 /* Encabezados */
 h1, h2 {
   text-align: center;
-  margin: 15px 0; /* menos espacio entre encabezados */
+  margin: 15px 0;
 }
 
 /* Párrafos */
@@ -61,34 +61,93 @@ ul li, ol li {
   margin-bottom: 7px;
 }
 
-/* --- Media query para móviles --- */
+/* --- QR y botones arriba --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.qr-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.accion {
+  background-color: #40E0D0;
+  color: #FFD700;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.accion:hover {
+  background-color: #00bfa5;
+}
+
+.qr-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* --- Media query móvil --- */
 @media (max-width: 768px) {
   .contenedor {
-    flex-direction: column; /* columnas apiladas */
+    flex-direction: column;
   }
   .columna {
     min-width: 100%;
   }
-}
-
-/* --- Ocultar botones flotantes que tapan texto --- */
-@media (max-width: 768px) {
-  .toc, .floating-toc, .anchor-link, .anchor, .header-anchor, nav {
-    display: none !important;
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .qr-container img {
+    width: 70px;
+    height: 70px;
   }
 }
 
-/* --- Ocultar botones flotantes automáticos globales --- */
-.anchor, .header-anchor, .anchor-link, .toc, .floating-toc {
+/* --- Ocultar botones flotantes GitHub Pages --- */
+.anchor, .header-anchor, .anchor-link, .toc, .floating-toc, nav {
   display: none !important;
 }
+
 </style>
 </head>
 <body>
 
+<!-- Cabecera con QR y botones -->
+<div class="header">
+  <div class="qr-container">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank" class="accion">AFILIATE</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" alt="QR EL REAL">
+    </a>
+  </div>
+
+  <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
+
+  <div class="qr-container">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank" class="accion">CANDIDATURA</a>
+    <a href="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" alt="QR EL REAL">
+    </a>
+  </div>
+</div>
+
 <!-- Sección 1: Introducción -->
 <section id="intro" class="section">
-  <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
   <p>
     La democracia no es que una vez cada cuatro años se vote a un partido diferente y que ese gobierno haga lo que quiera sin contar con la opinión de los ciudadanos. 
     La democracia real (demo:pueblo) (cracia:sistema de poder) significa que el poder lo tenemos los ciudadanos. 
