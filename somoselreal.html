@@ -2,152 +2,106 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EL REAL - Democracia Real</title>
 <style>
-/* --- Estilos generales --- */
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.8;
   margin: 0;
-  background-color: #FFD700;
+  background-color: #FFD700; /* amarillo */
   color: #000;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* scroll suave para navegación */
 }
 
-/* Cabecera con QR y botones */
-.header {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 20px;
-  background-color: #FFD700;
-}
-
-.qr-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.accion {
-  background-color: #40E0D0;
-  color: #FFD700;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.accion:hover {
-  background-color: #00bfa5;
-  color: #fff;
-}
-
-.qr-container img {
-  width: 100px;
-  height: 100px;
-  border-radius: 8px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
-
-/* Secciones */
+/* Contenedor principal */
 .section {
-  padding: 30px 20px;
+  min-height: 100vh; /* cada sección ocupa toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
+/* Dos columnas en las secciones que las usan */
 .contenedor {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  flex-wrap: wrap; /* para móviles se acomoda */
+  gap: 20px;
 }
 
+/* Cada columna */
 .columna {
   flex: 1;
   background-color: rgba(255, 255, 255, 0.85);
-  padding: 20px;
+  padding: 25px;
   border-radius: 8px;
-  min-width: 280px;
+  min-width: 280px; /* evita que sean demasiado estrechas en móviles */
 }
 
+/* Encabezados centrados */
 h1, h2 {
   text-align: center;
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
+/* Párrafos con margen */
 p {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
+/* Listas con separación */
 ul, ol {
   margin-left: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 ul li, ol li {
-  margin-bottom: 7px;
+  margin-bottom: 10px;
 }
 
-/* --- Media query móvil --- */
-@media (max-width: 768px) {
-  /* Cabecera apilada */
-  .header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .qr-container {
-    justify-content: center;
-    margin-bottom: 15px;
-  }
-  .qr-container img {
-    width: 70px;
-    height: 70px;
-  }
-
-  /* Columnas apiladas en móvil */
-  .contenedor {
-    flex-direction: column;
-  }
-  .columna {
-    min-width: 100%;
-  }
+/* Botones de navegación (opcional) */
+nav {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 100;
 }
 
-/* --- Ocultar botones flotantes automáticos de GitHub Pages/Jekyll --- */
-.anchor, .header-anchor, .anchor-link, .toc, .floating-toc, nav {
-  display: none !important;
+nav a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  background-color: #40E0D0; /* azul turquesa */
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
 }
+
+nav a:hover {
+  background-color: #00b2a9;
+  color: #fff;
+}
+
 </style>
 </head>
 <body>
 
-<!-- Cabecera con QR y botones -->
-<div class="header">
-  <div class="qr-container">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank" class="accion">AFILIATE</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" alt="QR EL REAL">
-    </a>
-  </div>
-
-  <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
-
-  <div class="qr-container">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank" class="accion">CANDIDATURA</a>
-    <a href="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" alt="QR EL REAL">
-    </a>
-  </div>
-</div>
+<!-- Navegación onepage -->
+<nav>
+  <a href="#intro">Introducción</a>
+  <a href="#problema">Problema</a>
+  <a href="#solucion">Cómo funciona</a>
+  <a href="#propuestas">Propuestas</a>
+  <a href="#final">EL REAL</a>
+</nav>
 
 <!-- Sección 1: Introducción -->
 <section id="intro" class="section">
+  <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
   <p>
     La democracia no es que una vez cada cuatro años se vote a un partido diferente y que ese gobierno haga lo que quiera sin contar con la opinión de los ciudadanos. 
     La democracia real (demo:pueblo) (cracia:sistema de poder) significa que el poder lo tenemos los ciudadanos. 
@@ -174,7 +128,7 @@ ul li, ol li {
       <h2>Cómo funciona con EL REAL: democracia directa real</h2>
       <ul>
         <li>Cada decisión relevante requiere votación ciudadana</li>
-        <li>Se utilizan plataforma digital + buzones físicos para accesibilidad</li>
+        <li>Se utilizan plataforma digital + buzones físicos para proporcionar accesibilidad a todos</li>
         <li>Votación mensual de 1 minuto, con varias preguntas tipo sí/no</li>
         <li>Decisiones importantes y grandes presupuestos necesitan aprobación directa de ciudadanos</li>
       </ul>
@@ -190,14 +144,14 @@ ul li, ol li {
         Este sistema permite que se tomen decisiones con el objetivo de mejorar la sociedad en la dirección del bien para todos los españoles, como por ejemplo:
       </p>
       <ul>
-        <li>Aumento de ayudas a agricultura, ganadería y pesca</li>
-        <li>Agua gratuita para los hogares</li>
-        <li>Electricidad gratuita en invierno</li>
-        <li>Ayudas a padres y madres de entre 18 a 38 años</li>
-        <li>Educación pública gratuita y de calidad</li>
-        <li>Reducción y eliminación progresiva de impuestos, tasas y trámites</li>
-        <li>Garantizar el cumplimiento de la ley en materia de seguridad</li>
-        <li>Venta del Falcon presidencial</li>
+        <li>Aumento de ayudas a agricultura ganadería y pesca (comemos gracias a ellos, son muy importantes)</li>
+        <li>Agua gratuita para los hogares españoles (es algo básico para la supervivencia, por ello debe ser accesible por todos)</li>
+        <li>Electricidad gratuita en los meses de invierno para los hogares españoles (la calefacción en invierno es esencial, no un privilegio)</li>
+        <li>Aumento de ayudas a padres y madres de entre 18 a 38 años (quien quiera crear familia debe hacerlo)</li>
+        <li>Educación pública gratuita y de mayor calidad (- alumnos por aula, + conocimientos para la vida real)</li>
+        <li>Reducción y eliminación progresiva de impuestos, tasas y trámites (simplificando y facilitando el desarrollo particular y empresarial)</li>
+        <li>Garantizar el cumplimiento de la ley en materia de ocupación y entrada de personas, protegiendo la seguridad ciudadana</li>
+        <li>Venta del Falcon (un presidente debe quedarse en el país que gobierna, para salir al exterior ya existe el Ministerio de Exteriores)</li>
       </ul>
     </div>
 
