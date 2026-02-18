@@ -8,24 +8,23 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto; /* para que se pueda hacer scroll si el contenido es grande */
   font-family: Arial, sans-serif;
   background-color: #FFD700;
   color: #000;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* se alinea al principio para que no corte el contenido */
 }
 
 .container {
   width: 95%;
   max-width: 1200px;
-  height: 95%;
+  padding: 10px;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  padding: 10px;
-  box-sizing: border-box;
   position: relative;
 }
 
@@ -112,33 +111,37 @@ li { margin-bottom: 3px; }
 
 /* Fila inferior */
 .section.bottom {
-  grid-column: 1 / -1; /* ocupa todo el ancho del grid */
-  border-left: none;    /* quitar borde si heredaba de .column */
-  padding-left: 0;      /* opcional, para alinear con el contenido */
+  grid-column: 1 / -1; /* ocupa todo el ancho */
+  border-left: none;
+  padding-left: 0;
+  text-align: center; /* centramos todo el contenido */
 }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <!-- Izquierda -->
-  <div class="qr-container">
-    <!-- Botón AFILIATE -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" 
-       target="_blank" 
-       class="accion">AFILIATE</a>
-  </div>
+<div class="container">
 
-  <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
+  <!-- Cabecera con QR y texto a la izquierda -->
+  <div class="header">
+    <!-- Izquierda -->
+    <div class="qr-container">
+      <!-- Botón AFILIATE -->
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header"
+         target="_blank" 
+         class="accion">AFILIATE</a>
+    </div>
 
-  <!-- Derecha -->
-  <div class="qr-container">
-    <!-- Botón CANDIDATURA -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" 
-       target="_blank" 
-       class="accion">CANDIDATURA</a>
+    <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
+
+    <!-- Derecha -->
+    <div class="qr-container">
+      <!-- Botón CANDIDATURA -->
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header"
+         target="_blank" 
+         class="accion">CANDIDATURA</a>
+    </div>
   </div>
-</div>
 
   <!-- Columna izquierda -->
   <div class="section column">
@@ -171,14 +174,14 @@ li { margin-bottom: 3px; }
       Este sistema permite que se tomen decisiones con el objetivo de mejorar la sociedad en la dirección del bien para todos:
     </p>
     <ul>
-      <li>Aumento de ayudas a agricultura, ganadería y pesca (comemos gracias a ellos, son muy importantes)</li></li>
-      <li>Agua gratuita para los hogares (es algo básico para la supervivencia, por ello debe ser accesible por todos)</li>
-      <li>Electricidad gratuita en los meses de invierno para los hogares (la calefacción en invierno es esencial, no un privilegio)</li>
-      <li>Ayudas a padres y madres de entre 18 a 38 (quien quiera crear familia debe hacerlo)</li>
-      <li>Educación pública gratuita y de mayor calidadcalidad (- alumnos por aula, + conocimientos para la vida real)</li>
-      <li>Reducción y eliminación progresiva de impuestos, tasas y trámites (simplificando y facilitando el desarrollo particular y empresarial)</li>
+      <li>Aumento de ayudas a agricultura, ganadería y pesca</li>
+      <li>Agua gratuita para los hogares</li>
+      <li>Electricidad gratuita en los meses de invierno para los hogares</li>
+      <li>Ayudas a padres y madres de entre 18 a 38</li>
+      <li>Educación pública gratuita y de mayor calidad</li>
+      <li>Reducción y eliminación progresiva de impuestos, tasas y trámites</li>
       <li>Garantizar cumplimiento de la ley en ocupación y seguridad</li>
-      <li>Venta del Falcon (un presidente debe quedarse en el país que gobierna, para salir al exterior ya existe el Ministerio de Exteriores)</li>
+      <li>Venta del Falcon</li>
     </ul>
 
     <p>
@@ -189,16 +192,9 @@ li { margin-bottom: 3px; }
   <!-- Fila inferior -->
   <div class="section bottom">
     <h2>EL REAL propone. LOS CIUDADANOS disponen</h2>
-    <h2>Somos el primer y único representante de los ciudadanos. TODOS SOMOS EL REAL. Confía en nosotros, hagamos juntos un país mejor.</h2>
+    <p>Somos el primer y único representante de los ciudadanos. Confía en nosotros, hagamos juntos un país mejor.</p>
   </div>
 
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
