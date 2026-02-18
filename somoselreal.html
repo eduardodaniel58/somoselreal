@@ -1,214 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>EL REAL - Democracia Real</title>
-<style>
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-  background-color: #FFD700;
-  color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botones Azules</title>
+  <style>
+    /* Cabecera con botones */
+    .header {
+      grid-column: 1 / 3;
+      display: flex;
+      justify-content: flex-start; /* botones alineados a la izquierda */
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 10px; /* separación uniforme entre botones */
+    }
 
-.container {
-  width: 95%;
-  max-width: 1200px;
-  height: 95%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  column-gap: 60px;
-  padding: 10px;
-  box-sizing: border-box;
-  position: relative;
-}
+    /* Botones AFÍLIATE / APÚNTATE */
+    .accion {
+      background-color: #40E0D0; /* azul turquesa */
+      color: #FFD700;             /* texto dorado */
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
 
-/* Cabecera con botones */
-.header {
-  grid-column: 1 / 3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-/* Botones AFILIATE / APUNTATE */
-.accion  {
-  background-color: #40E0D0;
-  color: #FFD700;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
-  margin-right: 10px; /* espacio entre texto y QR */
-}
-
-   <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" 
-   target="_blank" class="accion">
-  AFÍLIATE / APÚNTATE
-</a>
-  
-.accion:hover {
-  background-color: #00bfa5;
-}
-
-/* Tarjetas/secciones */
-.section {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
-  padding: 15px 20px;
-  box-sizing: border-box;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  grid-column: 1 / 3;
-  text-align: center;
-  margin: 0;
-  font-size: 1.5em;
-}
-
-h2 {
-  text-align: center;
-  margin: 5px 0;
-  font-size: 1em;
-}
-
-p {
-  margin: 4px 0;
-  font-size: 0.85em;
-  line-height: 1.2em;
-}
-
-ul {
-  padding-left: 20px;
-  margin: 4px 0;
-}
-
-li { margin-bottom: 3px; }
-
-.column + .column {
-  border-left: 2px solid #40E0D0;
-  padding-left: 15px;
-}
-</style>
+    .accion:hover {
+      background-color: #00bfa5;  /* azul más oscuro al pasar mouse */
+      color: white;
+      transform: scale(1.05);     /* ligero agrandamiento */
+    }
+  </style>
 </head>
 <body>
 
-    <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
+  <div class="header">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" 
+       target="_blank" class="accion">
+      AFÍLIATE / APÚNTATE
+    </a>
 
-    <!-- Derecha -->
-    <div class="qr-container">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank"  
-class="accion">CANDIDATURA</a>
-      <a href="https://api.qrserver.com/v1/create-qr-code/? 
-size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" target="_blank">
-        <img src="https://api.qrserver.com/v1/create-qr-code/? 
-size=100x100&data=https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" alt="QR EL REAL">
-      </a>
-    </div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" 
+       target="_blank" class="accion">
+      APÚNTATE AHORA
+    </a>
   </div>
 
-  <!-- Columna izquierda -->
-  <div class="section column">
-    <p>
-      La democracia no es que una vez cada cuatro anos se vote a un partido diferente y que ese gobierno haga lo que quiera sin contar con la opinion de los ciudadanos. La democracia real  
-(demo: pueblo) (cracia: sistema de poder) significa que el poder lo tenemos los ciudadanos. La democracia real es que los ciudadanos votemos las decisiones importantes.
-    </p>
-
-    <h2>Por que es obsoleta la "democracia" anterior?</h2>
-    <ul>
-      <li>Alternancia de partidos sin participacion directa real</li>
-      <li>Falta de transparencia y control ciudadano</li>
-      <li>Dependencia de fondos publicos y lobbies para campanas</li>
-      <li>Politicas que no priorizan al ciudadano</li>
-      <li>Servicios basicos no garantizados, altos impuestos y burocracia excesiva</li>
-    </ul>
-
-    <h2>Como funciona con EL REAL</h2>
-    <ul>
-      <li>Cada decision relevante requiere votacion ciudadana</li>
-      <li>Se utilizan plataforma digital + buzones fisicos para accesibilidad</li>
-      <li>Votacion mensual de 1 minuto, preguntas tipo si/no</li>
-      <li>Decisiones importantes y grandes presupuestos necesitan aprobacion directa</li>
-    </ul>
- <h2>EL REAL propone. LOS CIUDADANOS disponen</h2>
- 
-  </div>
-
-  <!-- Columna derecha -->
-  <div class="section column">
-    <p>
-      Este sistema permite que se tomen decisiones con el objetivo de mejorar la sociedad en la direccion del bien para todos:
-    </p>
-    <ul>
-      <li>Aumento de ayudas a agricultura ganaderia y pesca (comemos gracias a ellos, son muy importantes)</li>
-      <li>Agua gratuita para los hogares (es algo basico para la supervivencia, por ello debe ser accesible por todos)</li>
-      <li>Electricidad gratuita en los meses de invierno para los hogares (la calefaccion en invierno es esencial, no un privilegio)</li>
-      <li>Ayudas a padres y madres de entre 18 a 38 (quien quiera crear familia debe hacerlo)</li>
-      <li>Educacion publica gratuita y de mayor calidad (- alumnos por aula, + conocimientos para la vida real)</li>
-      <li>Reduccion y eliminacion progresiva de impuestos, tasas y tramites (simplificando y facilitando el desarrollo particular y empresarial)</li>
-      <li>Garantizar cumplimiento de la ley en ocupacion y seguridad</li>
-      <li>Venta del Falcon (un presidente debe quedarse en el pais que gobierna, para salir al exterior ya existe el Ministerio de Exteriores)</li>
-    </ul>
-
-    <p>
-      Todo esto es posible reorganizando el presupuesto del estado hacia el bien comun. Ya hay dinero suficiente; con EL REAL tambien gestion eficiente, somos capaces de hacer posible todo lo que nos proponemos.
-    </p>
-
-  </div>
-</div>
- 
 </body>
- 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
