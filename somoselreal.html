@@ -7,39 +7,44 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden;
   font-family: Arial, sans-serif;
   background-color: #FFD700;
   color: #000;
-  /* Se elimina el display:flex para que el grid funcione correctamente */
-  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   width: 95%;
   max-width: 1200px;
-  margin: 20px auto; /* centra horizontalmente */
+  height: 95%;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* dos columnas arriba */
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding: 10px;
   box-sizing: border-box;
   position: relative;
 }
 
-/* Cabecera */
+/* Cabecera con QR y botones */
 .header {
-  grid-column: 1 / -1;
+  grid-column: 1 / 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
+/* QR + texto a la izquierda */
 .qr-container {
   display: flex;
   align-items: center;
 }
 
+/* Texto AFILIATE / APUNTATE */
 .accion {
   background-color: #40E0D0;
   color: #FFD700;
@@ -49,11 +54,18 @@ html, body {
   cursor: pointer;
   transition: 0.3s;
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 10px; /* espacio entre texto y QR */
 }
 
 .accion:hover {
   background-color: #00bfa5;
+}
+
+.qr-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 /* Tarjetas/secciones */
@@ -68,7 +80,7 @@ html, body {
 }
 
 h1 {
-  grid-column: 1 / -1;
+  grid-column: 1 / 3;
   text-align: center;
   margin: 0;
   font-size: 1.5em;
@@ -101,8 +113,8 @@ li { margin-bottom: 3px; }
 /* Fila inferior */
 .section.bottom {
   grid-column: 1 / -1; /* ocupa todo el ancho del grid */
-  border-left: none;    /* quitar borde si se heredaba de .column */
-  padding-left: 0;
+  border-left: none;    /* quitar borde si heredaba de .column */
+  padding-left: 0;      /* opcional, para alinear con el contenido */
 }
 </style>
 </head>
@@ -110,14 +122,16 @@ li { margin-bottom: 3px; }
 
 <div class="container">
 
-  <!-- Cabecera -->
+  <!-- Cabecera con QR y texto a la izquierda -->
   <div class="header">
+    <!-- Izquierda -->
     <div class="qr-container">
       <a href="#" class="accion">AFILIATE</a>
     </div>
 
     <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
 
+    <!-- Derecha -->
     <div class="qr-container">
       <a href="#" class="accion">CANDIDATURA</a>
     </div>
@@ -126,33 +140,53 @@ li { margin-bottom: 3px; }
   <!-- Columna izquierda -->
   <div class="section column">
     <p>
-      La democracia no es que una vez cada cuatro años se vote a un partido diferente y que ese gobierno haga lo que quiera sin contar con la opinión de los ciudadanos...
+      La democracia no es que una vez cada cuatro años se vote a un partido diferente y que ese gobierno haga lo que quiera sin contar con la opinión de los ciudadanos. La democracia real  
+(demo: pueblo) (cracia: sistema de poder) significa que el poder lo tenemos los ciudadanos. La democracia real es que los ciudadanos votemos las decisiones importantes.
     </p>
 
     <h2>Por qué es obsoleta la "democracia" anterior?</h2>
     <ul>
       <li>Alternancia de partidos sin participación directa real</li>
       <li>Falta de transparencia y control ciudadano</li>
-      <li>Dependencia de fondos públicos y lobbies</li>
+      <li>Dependencia de fondos públicos y lobbies para campañas</li>
+      <li>Políticas que no priorizan al ciudadano</li>
+      <li>Servicios básicos no garantizados, altos impuestos y burocracia excesiva</li>
+    </ul>
+
+    <h2>Cómo funciona con EL REAL</h2>
+    <ul>
+      <li>Cada decisión relevante requiere votación ciudadana</li>
+      <li>Se utilizan plataforma digital + buzones físicos para accesibilidad</li>
+      <li>Votación mensual de 1 minuto, preguntas tipo sí/no</li>
+      <li>Decisiones importantes y grandes presupuestos necesitan aprobación directa</li>
     </ul>
   </div>
 
   <!-- Columna derecha -->
   <div class="section column">
     <p>
-      Este sistema permite que se tomen decisiones con el objetivo de mejorar la sociedad...
+      Este sistema permite que se tomen decisiones con el objetivo de mejorar la sociedad en la dirección del bien para todos:
     </p>
     <ul>
       <li>Aumento de ayudas a agricultura, ganadería y pesca</li>
       <li>Agua gratuita para los hogares</li>
-      <li>Electricidad gratuita en invierno</li>
+      <li>Electricidad gratuita en los meses de invierno para los hogares</li>
+      <li>Ayudas a padres y madres de entre 18 a 38</li>
+      <li>Educación pública gratuita y de mayor calidad</li>
+      <li>Reducción y eliminación progresiva de impuestos, tasas y trámites</li>
+      <li>Garantizar cumplimiento de la ley en ocupación y seguridad</li>
+      <li>Venta del Falcon</li>
     </ul>
+
+    <p>
+      Todo esto es posible reorganizando el presupuesto del estado hacia el bien común. Ya hay dinero suficiente; con EL REAL también gestión eficiente, somos capaces de hacer posible todo lo que nos proponemos.
+    </p>
   </div>
 
   <!-- Fila inferior -->
   <div class="section bottom">
-    <h2>Fila inferior</h2>
-    <p>Esta sección está debajo de las dos columnas y ocupa todo el ancho.</p>
+    <h2>EL REAL propone. LOS CIUDADANOS disponen</h2>
+    <p>Somos el primer y único representante de los ciudadanos. Confía en nosotros, hagamos juntos un país mejor.</p>
   </div>
 
 </div>
