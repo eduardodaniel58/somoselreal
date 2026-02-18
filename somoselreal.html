@@ -1,53 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Botones Azules</title>
-  <style>
-    /* Cabecera con botones */
-    .header {
-      grid-column: 1 / 3;
-      display: flex;
-      justify-content: flex-start; /* botones alineados a la izquierda */
-      align-items: center;
-      margin-bottom: 10px;
-      gap: 10px; /* separación uniforme entre botones */
-    }
+<meta charset="UTF-8">
+<title>EL REAL - Democracia Real</title>
+<style>
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  background-color: #FFD700; /* amarillo */
+  color: #000;
+  scroll-behavior: smooth; /* scroll suave para navegación */
+}
 
-    /* Botones AFÍLIATE / APÚNTATE */
-    .accion {
-      background-color: #40E0D0; /* azul turquesa */
-      color: #FFD700;             /* texto dorado */
-      font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-      text-decoration: none;
-      display: inline-block;
-    }
+/* Contenedor principal */
+.section {
+  min-height: 100vh; /* cada sección ocupa toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
 
-    .accion:hover {
-      background-color: #00bfa5;  /* azul más oscuro al pasar mouse */
-      color: white;
-      transform: scale(1.05);     /* ligero agrandamiento */
-    }
-  </style>
+/* Dos columnas en las secciones que las usan */
+.contenedor {
+  display: flex;
+  flex-wrap: wrap; /* para móviles se acomoda */
+  gap: 20px;
+}
+
+/* Cada columna */
+.columna {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 25px;
+  border-radius: 8px;
+  min-width: 280px; /* evita que sean demasiado estrechas en móviles */
+}
+
+/* Encabezados centrados */
+h1, h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Párrafos con margen */
+p {
+  margin-bottom: 20px;
+}
+
+/* Listas con separación */
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+ul li, ol li {
+  margin-bottom: 10px;
+}
+
+/* Botones de navegación (opcional) */
+nav {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 100;
+}
+
+nav a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  background-color: #40E0D0; /* azul turquesa */
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #00b2a9;
+  color: #fff;
+}
+
+</style>
 </head>
 <body>
 
-  <div class="header">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" 
-       target="_blank" class="accion">
-      AFÍLIATE / APÚNTATE
-    </a>
+<!-- Navegación onepage -->
+<nav>
+  <a href="#intro">Introducción</a>
+  <a href="#problema">Problema</a>
+  <a href="#solucion">Cómo funciona</a>
+  <a href="#propuestas">Propuestas</a>
+  <a href="#final">EL REAL</a>
+</nav>
 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUUlyGWuYZPa2pMZ14zjhJemm8OTxrSNIYTwaVLFqknzYCYg/viewform?usp=header" 
-       target="_blank" class="accion">
-      APÚNTATE AHORA
-    </a>
+<!-- Sección 1: Introducción -->
+<section id="intro" class="section">
+  <h1>PROPONEMOS: DEMOCRACIA REAL</h1>
+  <p>
+    La democracia no es que una vez cada cuatro años se vote a un partido diferente y que ese gobierno haga lo que quiera sin contar con la opinión de los ciudadanos. 
+    La democracia real (demo:pueblo) (cracia:sistema de poder) significa que el poder lo tenemos los ciudadanos. 
+    La democracia real es que los ciudadanos votemos las decisiones importantes.
+  </p>
+</section>
+
+<!-- Sección 2: Problema -->
+<section id="problema" class="section">
+  <div class="contenedor">
+    <div class="columna">
+      <h2>¿Por qué es obsoleta la “democracia” anterior?</h2>
+      <p>(Se podría llamar diferente porque no se ha implementado anteriormente una democracia realmente)</p>
+      <ul>
+        <li>Alternancia de partidos sin participación directa real</li>
+        <li>Falta de transparencia y control ciudadano</li>
+        <li>Dependencia de fondos públicos y lobbies para campañas</li>
+        <li>Políticas que no priorizan al ciudadano</li>
+        <li>Servicios básicos no garantizados, altos impuestos y burocracia excesiva</li>
+      </ul>
+    </div>
+
+    <div class="columna">
+      <h2>Cómo funciona con EL REAL: democracia directa real</h2>
+      <ul>
+        <li>Cada decisión relevante requiere votación ciudadana</li>
+        <li>Se utilizan plataforma digital + buzones físicos para proporcionar accesibilidad a todos</li>
+        <li>Votación mensual de 1 minuto, con varias preguntas tipo sí/no</li>
+        <li>Decisiones importantes y grandes presupuestos necesitan aprobación directa de ciudadanos</li>
+      </ul>
+    </div>
   </div>
+</section>
+
+<!-- Sección 3: Propuestas -->
+<section id="propuestas" class="section">
+  <div class="contenedor">
+    <div class="columna">
+      <p>
+        Este sistema permite que se tomen decisiones con el objetivo de mejorar la sociedad en la dirección del bien para todos los españoles, como por ejemplo:
+      </p>
+      <ul>
+        <li>Aumento de ayudas a agricultura ganadería y pesca (comemos gracias a ellos, son muy importantes)</li>
+        <li>Agua gratuita para los hogares españoles (es algo básico para la supervivencia, por ello debe ser accesible por todos)</li>
+        <li>Electricidad gratuita en los meses de invierno para los hogares españoles (la calefacción en invierno es esencial, no un privilegio)</li>
+        <li>Aumento de ayudas a padres y madres de entre 18 a 38 años (quien quiera crear familia debe hacerlo)</li>
+        <li>Educación pública gratuita y de mayor calidad (- alumnos por aula, + conocimientos para la vida real)</li>
+        <li>Reducción y eliminación progresiva de impuestos, tasas y trámites (simplificando y facilitando el desarrollo particular y empresarial)</li>
+        <li>Garantizar el cumplimiento de la ley en materia de ocupación y entrada de personas, protegiendo la seguridad ciudadana</li>
+        <li>Venta del Falcon (un presidente debe quedarse en el país que gobierna, para salir al exterior ya existe el Ministerio de Exteriores)</li>
+      </ul>
+    </div>
+
+    <div class="columna">
+      <p>
+        Todo esto es posible reorganizando el presupuesto del estado hacia el bien común. Ya hay dinero suficiente; con EL REAL también gestión eficiente.
+        Somos capaces de hacer posible todo lo que nos proponemos. Es la oportunidad de mejorar en todo.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Sección 4: Final -->
+<section id="final" class="section">
+  <h2>EL REAL propone. LOS CIUDADANOS disponen.</h2>
+  <h2>TODOS SOMOS EL REAL</h2>
+  <p>
+    Somos el primer y único representante de los ciudadanos. Confía en nosotros, hagamos juntos un país mejor.
+  </p>
+</section>
 
 </body>
 </html>
